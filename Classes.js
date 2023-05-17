@@ -21,8 +21,20 @@
  */
 class Person {
   // continue the code here
-}
 
+  constructor (firstName, lastName, gender, birthYear) {
+    this.firstname = firstName;
+    this.lastName = lastName;
+    this.gender = gender;
+    this.birthYear = birthYear;
+  };
+
+  printName = () => `${this.firstname} ${this.lastName}`;
+
+  calculateAge = (currentYear) => (currentYear - this.birthYear);
+}
+const person1 = new Person("Abdullah", "AlMatouq", "M", 1998);
+console.log(person1.calculateAge(2023));
 /** (Question 2): (15000 Points)
  * 1. Write a class `Movie`, give it the following properties
  * - title
@@ -46,8 +58,22 @@ class Person {
 
 class Movie {
   // continue the code here
-}
+  rating = []
 
+  constructor (title, duration, genre) {
+    this.title = title;
+    this.duration = duration;
+    this.genre = genre;
+  }
+
+  rate = (rating) => {
+    if (rating >= 0 && rating <= 10) {
+    this.rating.push(rating)
+    return this.rating};
+}
+};
+const movie1 = new Movie("Tolkien", 120, "M");
+console.log(movie1.rate(6.8));
 /** (Question 3): (1000 Points)
  * 1. Create a class `Actor` that inherits `Person`, and adds the following properties
  * - movies: array of `Movie`
