@@ -29,12 +29,12 @@ class Person {
     this.birthYear = birthYear;
   };
 
-  printName = () => `${this.firstname} ${this.lastName}`;
+  printName() {return `${this.firstname} ${this.lastName}`};
 
-  calculateAge = (currentYear) => (currentYear - this.birthYear);
+  calculateAge(currentYear) {return (currentYear - this.birthYear)};
 }
 const person1 = new Person("Abdullah", "AlMatouq", "M", 1998);
-console.log(person1.calculateAge(2023));
+console.log(person1.printName(), person1.calculateAge(2023));
 /** (Question 2): (15000 Points)
  * 1. Write a class `Movie`, give it the following properties
  * - title
@@ -84,3 +84,18 @@ console.log(movie1.rate(6.8));
  */
 
 // write the class here
+class Actor extends Person {
+  constructor(firstName, lastName, gender, birthYear) {
+    super(firstName, lastName, gender, birthYear);
+    this.movies = [];
+  }
+
+  addMovie(movie) {
+this.movies.push(movie)
+  }
+  
+}
+
+const actor1 = new Actor("Abdullah", "AlMatouq", "M", 1998);
+actor1.addMovie("Tolkien");
+console.log(actor1);
